@@ -1,0 +1,6 @@
+[prod-k8s-master]
+
+[prod-k8s-workers]
+prod-k8s-worker03
+prod-k8s-worker04
+prod-k8s-worker05
