@@ -4,4 +4,4 @@
   vars_files:
     - answerfile.yml
   roles:
-     - deploy-vsphere-template
+    - deploy-vsphere-template

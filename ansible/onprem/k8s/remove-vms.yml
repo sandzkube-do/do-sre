@@ -4,4 +4,4 @@
   vars_files:
     - answerfile.yml
   roles:
-     - delete-vms
+    - remove-vms

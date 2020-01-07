@@ -19,11 +19,15 @@
       datastore: '{{ deploy_vsphere_datastore }}'
     networks:
     - name: '{{ guest_network }}'
-      ip: '{{ guest_custom_ip }}'
+      type: '{{ guest_netip_assign_type }}'
       netmask: '{{ guest_netmask }}'
       gateway: '{{ guest_gateway }}'
-      dns_servers:
-      - '{{ guest_dns_server }}'
+      customization:
+        hostname: '{{ inventory_hostname }}'
+        ip: '{{ guest_custom_ip }}'
+        dns_servers:
+        - '{{ guest_dns_server }}'
+        - 8.8.8.8
     hardware:
       memory_mb: '{{ guest_memory }}'
       num_cpus: '{{ guest_vcpu }}'
