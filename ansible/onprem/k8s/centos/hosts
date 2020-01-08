@@ -1,9 +1,0 @@
-[kubernetes-master-nodes]
-do-kube-master-01 ansible_host=192.168.100.132
-do-kube-master-02 ansible_host=192.168.100.133
-do-kube-master-03 ansible_host=192.168.100.134
-
-[kubernetes-worker-nodes]
-do-kube-worker-01 ansible_host=192.168.100.138
-do-kube-worker-02 ansible_host=192.168.100.140
-do-kube-worker-03 ansible_host=192.168.100.124
