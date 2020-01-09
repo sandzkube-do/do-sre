@@ -17,7 +17,7 @@
       datastore: '{{ deploy_vsphere_datastore }}'
     networks:
     - name: '{{ guest_network }}'
-      type: '{{ guess_netip_assign_type }}'
+      type: '{{ guest_netip_assign_type }}'
       gateway: '{{ guest_gateway }}'
       dns_servers:
       - '{{ guest_dns_server }}'
