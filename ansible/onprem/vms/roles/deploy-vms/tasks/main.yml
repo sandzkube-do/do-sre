@@ -24,7 +24,8 @@
       - 8.8.8.8
     hardware:
       num_cpus: '{{ guest_custom_vcpu }}'
-      hotadd_memory: false
+      memory_gb: '{{ guest_custom_vmem }}'
+      hotadd_memory: true
       hotadd_cpus: false
     customization:
       dns_servers:
