@@ -1,2 +1,2 @@
 [workers]
-do-kube-worker-04 guest_custom_ip='192.168.101.250' guest_notes='Worker #04'  guest_id='worker-04' custom_vmem='4096' guest_custom_vcpu='1' target_esxi_hostname='192.168.101.250'
+do-kube-worker-04 guest_custom_ip='192.168.101.250' guest_notes='Worker #04'  guest_id='worker-04' guest_custom_vmem='4096' guest_custom_vcpu='1' target_esxi_hostname='192.168.101.250'
