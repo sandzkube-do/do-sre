@@ -23,9 +23,10 @@
       - '{{ guest_dns_server }}'
       - 8.8.8.8
     hardware:
-      memory_gib: '{{ guest_custom_vmem }}'
+      memory_gb: '{{ guest_custom_vmem }}'
       num_cpus: '{{ guest_custom_vcpu }}'
       hotadd_memory: yes
+      hotadd_cpus: yes
     customization:
       dns_servers:
       - '{{ guest_dns_server }}'
