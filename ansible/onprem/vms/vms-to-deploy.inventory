@@ -7,4 +7,4 @@
 #do-kube-worker-01 guest_custom_ip='192.168.101.246' guest_notes='Worker #01' guest_id='worker-01' guest_custom_vcpu='2' guest_custom_vmem='20' target_esxi_hostname='192.168.101.250'
 #do-kube-worker-02 guest_custom_ip='192.168.101.245' guest_notes='Worker #02' guest_id='worker-02' guest_custom_vcpu='2' guest_custom_vmem='20' target_esxi_hostname='192.168.101.251'
 #do-kube-worker-03 guest_custom_ip='192.168.101.244' guest_notes='Worker #03' guest_id='worker-03' guest_custom_vcpu='2' guest_custom_vmem='20' target_esxi_hostname='192.168.101.252'
-do-kube-worker-04 guest_custom_ip='192.168.101.247' guest_notes='Worker #04' guest_id='worker-04' guest_custom_vcpu='2' guest_custom_vmem='4' target_esxi_hostname='192.168.101.250'
+do-kube-worker-04 guest_custom_ip='192.168.101.247' guest_notes='Worker #04' guest_id='worker-04' guest_custom_vcpu='2' guest_custom_vmem='4096' target_esxi_hostname='192.168.101.250'
