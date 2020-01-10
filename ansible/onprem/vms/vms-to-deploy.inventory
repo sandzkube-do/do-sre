@@ -1,9 +1,9 @@
 [masters]
-do-kube-master-01 guest_custom_ip='192.168.101.249' guest_notes='Master #1' guest_id='master-01' guest_custom_vcpu='8' guest_custom_vmem='12' target_esxi_hostname='192.168.101.250'
-#do-kube-master-02 guest_custom_ip='192.168.101.248' guest_notes='Master #2' guest_id='master-02' guest_custom_vcpu='8' guest_custom_vmem='12' target_esxi_hostname='192.168.101.251'
-#do-kube-master-03 guest_custom_ip='192.168.101.247' guest_notes='Master #3' guest_id='master-03' guest_custom_vcpu='8' guest_custom_vmem='12' target_esxi_hostname='192.168.101.252'
+do-kube-master-01 guest_custom_ip='192.168.101.249' guest_notes='Master #1' guest_id='master-01' guest_custom_vcpu='8' guest_custom_vmem='24' target_esxi_hostname='192.168.101.250'
+#do-kube-master-02 guest_custom_ip='192.168.101.248' guest_notes='Master #2' guest_id='master-02' guest_custom_vcpu='8' guest_custom_vmem='24' target_esxi_hostname='192.168.101.251'
+#do-kube-master-03 guest_custom_ip='192.168.101.247' guest_notes='Master #3' guest_id='master-03' guest_custom_vcpu='8' guest_custom_vmem='24' target_esxi_hostname='192.168.101.252'
 
 [workers]
-#do-kube-worker-01 guest_custom_ip='192.168.101.246' guest_notes='Worker #01' guest_id='worker-01' guest_custom_vcpu='2' guest_custom_vmem='4' target_esxi_hostname='192.168.101.250'
-do-kube-worker-02 guest_custom_ip='192.168.101.245' guest_notes='Worker #02' guest_id='worker-02' guest_custom_vcpu='2' guest_custom_vmem='4' target_esxi_hostname='192.168.101.251'
-#do-kube-worker-03 guest_custom_ip='192.168.101.244' guest_notes='Worker #03' guest_id='worker-03' guest_custom_vcpu='2' guest_custom_vmem='4' target_esxi_hostname='192.168.101.252'
+#do-kube-worker-01 guest_custom_ip='192.168.101.246' guest_notes='Worker #01' guest_id='worker-01' guest_custom_vcpu='2' guest_custom_vmem='20' target_esxi_hostname='192.168.101.250'
+do-kube-worker-02 guest_custom_ip='192.168.101.245' guest_notes='Worker #02' guest_id='worker-02' guest_custom_vcpu='2' guest_custom_vmem='20' target_esxi_hostname='192.168.101.251'
+#do-kube-worker-03 guest_custom_ip='192.168.101.244' guest_notes='Worker #03' guest_id='worker-03' guest_custom_vcpu='2' guest_custom_vmem='20' target_esxi_hostname='192.168.101.252'
