@@ -8,5 +8,9 @@
 #do-kube-worker-02 guest_custom_ip='192.168.101.245' guest_notes='Worker #02' guest_id='worker-02' guest_custom_vcpu='2' guest_custom_vmem='4'
 
 [alexavms]
-alexa-master-01 guest_notes='Alexa #1' guest_id='alexa-01' guest_custom_vcpu='2' guest_custom_vmem='4'
-alexa-master-02 guest_notes='Alexa #2' guest_id='alexa-02' guest_custom_vcpu='2' guest_custom_vmem='4'
+#alexa-master-01 guest_notes='Alexa #1' guest_id='alexa-01' guest_custom_vcpu='2' guest_custom_vmem='4'
+#alexa-master-02 guest_notes='Alexa #2' guest_id='alexa-02' guest_custom_vcpu='2' guest_custom_vmem='4'
+alexa-master-03 guest_notes='Alexa #3' guest_id='alexa-03' guest_custom_vcpu='2' guest_custom_vmem='4'
+
+[all:vars]
+ansible_python_interpreter=/usr/bin/python3
