@@ -7,18 +7,17 @@
     password: '{{ deploy_vsphere_password }}'
     validate_certs: no
     datacenter: '{{ deploy_vsphere_datacenter }}'
-    cluster: '{{ deploy_vsphere_cluster }}'
     folder: '{{ deploy_vsphere_folder }}'
     name: '{{ inventory_hostname }}'
     guest_id: '{{ guest_id }}'
-    annotation: "{{ guest_notes }}"
+    annotation: '{{ guest_notes }}'
+    esxi_hostname: '{{ target_esxi_hostname }}'
     disk:
     - size_gb: '{{ guest_storage }}'
       datastore: '{{ deploy_vsphere_datastore }}'
     networks:
     - name: '{{ guest_network }}'
-      ip: '{{ guest_custom_ip }}'
-      netmask: '{{ guest_netmask }}'
+      type: '{{ guest_netip_assign_type }}'
       gateway: '{{ guest_gateway }}'
       dns_servers:
       - '{{ guest_dns_server }}'

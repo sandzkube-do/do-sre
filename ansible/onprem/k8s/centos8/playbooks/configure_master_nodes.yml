@@ -1,6 +1,5 @@
 ---
-- hosts: kubernetes-master-nodes
-  become: centos
+- hosts: master
   vars_files:
   - ../env_variables
   tasks:
@@ -16,13 +15,14 @@
     register: output
 
   - name: Storing Logs and Generated token for future purpose.
-    local_action: copy content={{ output.stdout }} dest=/home/centos/{{ token_file }}
+    local_action: copy content={{ output.stdout }} dest=/root/{{ token_file }}
 
   - name: Copying required files
     shell: |
-     mkdir -p $HOME/.kube
-     sudo cp -f /etc/kubernetes/admin.conf $HOME/.kube/config
-     sudo chown $(id -u):$(id -g) $HOME/.kube/config
+     mkdir -p /root/.kube
+     sudo cp -f /etc/kubernetes/admin.conf /root/.kube/config
+     sudo chown $(id -u):$(id -g) /root/.kube/config
 
-  - name: Install Network Add-on
-    command: kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
+#  - name: Install Pod Network Add-on
+#    command: kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
+# kubeadm init --apiserver-advertise-address 192.168.101.51 --pod-network-cidr=10.244.0.0/16cd 
