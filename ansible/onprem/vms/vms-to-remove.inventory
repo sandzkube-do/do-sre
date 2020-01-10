@@ -1,9 +1,22 @@
 [prod-k8s-master]
+<<<<<<< HEAD
 do-kube-master-01
+=======
+#do-kube-master-01
+>>>>>>> 62c6d6bc5cb9643ee205354c0c059f9a43ca33a4
 #do-kube-master-02
 #do-kube-master-03
 
 [prod-k8s-workers]
 #do-kube-worker-01
+<<<<<<< HEAD
 do-kube-worker-02
 #do-kube-worker-03
+=======
+#do-kube-worker-02
+
+[alexa_vms]
+alexa-master-01
+alexa-master-02
+alexa-master-03
+>>>>>>> 62c6d6bc5cb9643ee205354c0c059f9a43ca33a4

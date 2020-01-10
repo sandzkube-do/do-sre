@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [masters]
 do-kube-master-01 guest_custom_ip='192.168.101.249' guest_notes='Master #1' guest_id='master-01' guest_custom_vcpu='8' guest_custom_vmem='12' target_esxi_hostname='192.168.101.250'
 #do-kube-master-02 guest_custom_ip='192.168.101.248' guest_notes='Master #2' guest_id='master-02' guest_custom_vcpu='8' guest_custom_vmem='12' target_esxi_hostname='192.168.101.251'
@@ -7,3 +8,26 @@ do-kube-master-01 guest_custom_ip='192.168.101.249' guest_notes='Master #1' gues
 #do-kube-worker-01 guest_custom_ip='192.168.101.246' guest_notes='Worker #01' guest_id='worker-01' guest_custom_vcpu='2' guest_custom_vmem='4' target_esxi_hostname='192.168.101.250'
 do-kube-worker-02 guest_custom_ip='192.168.101.245' guest_notes='Worker #02' guest_id='worker-02' guest_custom_vcpu='2' guest_custom_vmem='4' target_esxi_hostname='192.168.101.251'
 #do-kube-worker-03 guest_custom_ip='192.168.101.244' guest_notes='Worker #03' guest_id='worker-03' guest_custom_vcpu='2' guest_custom_vmem='4' target_esxi_hostname='192.168.101.252'
+=======
+[do-k8s-master]
+#do-kube-master-01 guest_custom_ip='192.168.101.249' guest_notes='Master #1' guest_id='master-01' guest_custom_vcpu='8' guest_custom_vmem='12'
+#do-kube-master-02 guest_custom_ip='192.168.101.248' guest_notes='Master #2' guest_id='master-02' guest_custom_vcpu='8' guest_custom_vmem='12' 
+#do-kube-master-03 guest_custom_ip='192.168.101.247' guest_notes='Master #3' guest_id='master-03' guest_custom_vcpu='8' guest_custom_vmem='12'
+
+[do-k8s-workers]
+#do-kube-worker-01 guest_custom_ip='192.168.101.246' guest_notes='Worker #01' guest_id='worker-01' guest_custom_vcpu='2' guest_custom_vmem='4'
+#do-kube-worker-02 guest_custom_ip='192.168.101.245' guest_notes='Worker #02' guest_id='worker-02' guest_custom_vcpu='2' guest_custom_vmem='4'
+
+[alexavms]
+#alexa-master-01 guest_notes='Alexa #1' guest_id='alexa-01' guest_custom_vcpu='2' guest_custom_vmem='4'
+#alexa-master-02 guest_notes='Alexa #2' guest_id='alexa-02' guest_custom_vcpu='2' guest_custom_vmem='4'
+#alexa-master-03 guest_notes='Alexa #3' guest_id='alexa-03' guest_custom_vcpu='2' guest_custom_vmem='4'
+
+[mikevms]
+mike-master-01 guest_notes='Mike #1' guest_id='mike-01' guest_custom_vcpu='2' guest_custom_vmem='4'
+mike-master-02 guest_notes='Mike #2' guest_id='mike-02' guest_custom_vcpu='2' guest_custom_vmem='4'
+mike-master-03 guest_notes='Mike #3' guest_id='mike-03' guest_custom_vcpu='2' guest_custom_vmem='4'
+
+[all:vars]
+ansible_python_interpreter=/usr/bin/python3
+>>>>>>> 62c6d6bc5cb9643ee205354c0c059f9a43ca33a4
