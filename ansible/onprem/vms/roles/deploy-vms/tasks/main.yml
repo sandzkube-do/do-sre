@@ -12,7 +12,7 @@
     guest_id: '{{ guest_id }}'
     annotation: '{{ guest_notes }}'
     esxi_hostname: '{{ target_esxi_hostname }}'
-    disk:
+    vm_disk:
     - size_gb: '{{ guest_storage }}'
       datastore: '{{ deploy_vsphere_datastore }}'
     networks:
@@ -22,7 +22,7 @@
       dns_servers:
       - '{{ guest_dns_server }}'
       - 8.8.8.8
-    hardware:
+    vm_hardware:
       num_cpus: '{{ guest_custom_vcpu }}'
       memory_gb: '{{ guest_custom_vmem }}'
       hotadd_memory: true
