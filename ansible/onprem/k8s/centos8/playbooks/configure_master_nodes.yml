@@ -10,8 +10,12 @@
     shell: kubeadm reset -f
     register: output
 
+  - name: Turn firewall off
+    shell: systemctl disable firewalld && systemctl stop firewalld  
+    register: output
+
   - name: Initializing Kubernetes cluster
-    shell: kubeadm init --apiserver-advertise-address {{ad_addr}} --pod-network-cidr={{cidr_v}}
+    shell: kubeadm init --apiserver-advertise-address {{ad_addr}} --pod-network-cidr={{cidr_v}} --ignore-preflight-errors=all
     register: output
 
   - name: Storing Logs and Generated token for future purpose.
@@ -20,9 +24,8 @@
   - name: Copying required files
     shell: |
      mkdir -p /root/.kube
-     sudo cp -f /etc/kubernetes/admin.conf /root/.kube/config
-     sudo chown $(id -u):$(id -g) /root/.kube/config
+     cp -f /etc/kubernetes/admin.conf /root/.kube/config
 
-#  - name: Install Pod Network Add-on
-#    command: kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
+  - name: Install Pod Network Add-on
+    command: kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
 # kubeadm init --apiserver-advertise-address 192.168.101.51 --pod-network-cidr=10.244.0.0/16cd 

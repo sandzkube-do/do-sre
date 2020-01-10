@@ -1,5 +1,5 @@
 [master]
-do-kube-master-01 ansible_host=192.168.101.51
+#do-kube-master-01 ansible_host=192.168.101.51
 do-kube-master-02 ansible_host=192.168.101.44
 do-kube-master-03 ansible_host=192.168.101.40
 
