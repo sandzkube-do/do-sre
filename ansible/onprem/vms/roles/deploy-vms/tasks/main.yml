@@ -24,7 +24,7 @@
       - 8.8.8.8
     hardware:
       num_cpus: '{{ guest_custom_vcpu }}'
-      memory_mb: '{{ guest_custom_vmem }}'
+      memory_mb: 4
     customization:
       dns_servers:
       - '{{ guest_dns_server }}'
