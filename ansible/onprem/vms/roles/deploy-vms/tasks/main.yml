@@ -25,6 +25,7 @@
     hardware:
       memory_gb: '{{ guest_custom_vmem }}'
       num_cpus: '{{ guest_custom_vcpu }}'
+      hotadd_memory: yes
     customization:
       dns_servers:
       - '{{ guest_dns_server }}'
