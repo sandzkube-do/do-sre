@@ -1,3 +1,5 @@
 [prod-k8s-workers]
-do-kube-worker-04
+mike-master-01
+mike-master-01
+mike-master-01
 
