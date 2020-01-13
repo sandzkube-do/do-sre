@@ -1,4 +1,2 @@
 [prod-k8s-workers]
-mike-master-02
-mike-master-03
-
+do-kube-worker-02
