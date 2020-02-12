@@ -25,4 +25,8 @@
 
 #  - name: Install Pod Network Add-on
 #    command: kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
+<<<<<<< HEAD
 # kubeadm init --apiserver-advertise-address 192.168.101.51 --pod-network-cidr=10.244.0.0/16
+=======
+# kubeadm init --apiserver-advertise-address 192.168.101.51 --pod-network-cidr=10.244.0.0/16cd 
+>>>>>>> c19805d85a19fb551499010e989b6bbc97bc4099

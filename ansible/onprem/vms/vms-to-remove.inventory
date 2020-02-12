@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [prod-k8s-master]
 do-kube-master-01
 #do-kube-master-02
@@ -7,3 +8,7 @@ do-kube-master-01
 #do-kube-worker-01
 do-kube-worker-02
 #do-kube-worker-03
+=======
+[prod-k8s-workers]
+do-kube-worker-04
+>>>>>>> c19805d85a19fb551499010e989b6bbc97bc4099
