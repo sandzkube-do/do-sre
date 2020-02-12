@@ -1,13 +1,13 @@
 [kubernetes-master-nodes]
-do-kube-master-01 ansible_host=192.168.100.198
-do-kube-master-02 ansible_host=192.168.100.200
-do-kube-master-03 ansible_host=192.168.100.201
+do-kube-master-01 ansible_host=192.168.101.27
+do-kube-master-02 ansible_host=192.168.101.33
+do-kube-master-03 ansible_host=192.168.101.20
 
 [kubernetes-worker-nodes]
-do-kube-worker-01 ansible_host=192.168.100.202
-do-kube-worker-02 ansible_host=192.168.100.197
+do-kube-worker-01 ansible_host=192.168.101.28
+do-kube-worker-02 ansible_host=192.168.101.35
+do-kube-worker-03 ansible_host=192.168.101.37
 
 [all:vars]
 ansible_connection=ssh
-ansible_ssh_user=root 
-#ansible_ssh_pass=P@ssw0rd
+ansible_user=root 

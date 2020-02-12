@@ -1,18 +1,6 @@
----
 - hosts: all
   become: yes
-  vars_files:
-  - ../env_variables
   tasks:
-  - name: Disabling Swap on all nodes
-    shell: swapoff -a
-
-  - name: Commenting Swap entries in /etc/fstab
-    replace:
-     path: /etc/fstab
-     regexp: '(.*swap*)'
-     replace: '#\1'
-  
   - name: install Docker
     yum:
       name: docker
@@ -33,23 +21,23 @@
 
   - name: ensure net.bridge.bridge-nf-call-ip6tables is set to 1
     sysctl:
-    name: net.bridge.bridge-nf-call-ip6tables
-    value: 1
-    state: present
+      name: net.bridge.bridge-nf-call-ip6tables
+      value: 1
+      state: present
 
   - name: ensure net.bridge.bridge-nf-call-iptables is set to 1
     sysctl:
-    name: net.bridge.bridge-nf-call-iptables
-    value: 1
-    state: present
+      name: net.bridge.bridge-nf-call-iptables
+      value: 1
+      state: present
 
   - name: add Kubernetes' YUM repository
     yum_repository:
-    name: Kubernetes
-    description: Kubernetes YUM repository
-    baseurl: https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64
-    gpgkey: https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
-    gpgcheck: yes
+      name: Kubernetes
+      description: Kubernetes YUM repository
+      baseurl: https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64
+      gpgkey: https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
+      gpgcheck: yes
 
   - name: install kubelet
     yum:
@@ -71,9 +59,8 @@
 - hosts: kubernetes-master-nodes
   become: yes
   tasks:
-   - name: install kubectl
-     yum:
-        name: kubectl-1.14.0
-        state: present
-        allow_downgrade: yes
-  
+  - name: install kubectl
+    yum:
+      name: kubectl-1.14.0
+      state: present
+      allow_downgrade: yes

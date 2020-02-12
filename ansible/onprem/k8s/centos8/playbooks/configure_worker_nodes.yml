@@ -1,14 +1,13 @@
 ---
-- hosts: kubernetes-worker-nodes
+- hosts: worker
   vars_files:
   - ../env_variables
-  become: centos
   tasks:
   - name: Copying token to worker nodes
-    copy: src=/home/centos/{{ token_file }} dest=/home/centos/join_token
+    copy: src=/root/{{ token_file }} dest=/root/join_token
 
   - name: Joining worker nodes with kubernetes master
     shell: |
      kubeadm reset -f
-     cat /home/centos/join_token | tail -2 > out.sh
+     cat /root/join_token | tail -2 > out.sh
      sh out.sh
