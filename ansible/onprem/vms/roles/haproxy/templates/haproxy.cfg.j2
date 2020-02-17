@@ -60,23 +60,75 @@ defaults
 #---------------------------------------------------------------------
 # main frontend which proxys to the backends
 #---------------------------------------------------------------------
-frontend  main *:80
-    {% for backend in haproxy.backends %}
-        {% for acl in backend.acls %}
-        acl is_{{backend.title}} {{acl}}
-        {% endfor %}
-        use_backend {{backend.title}} if is_{{backend.title}}
+#frontend  main *:80
+#    {% for backend in haproxy.backends %}
+#       {% for acl in backend.acls %}
+#       acl is_{{backend.title}} {{acl}}
+#       {% endfor %}
+#       use_backend {{backend.title}} if is_{{backend.title}}
 
-    {% endfor %}
-    default_backend      {{haproxy.default}}
+#    {% endfor %}
+#   default_backend      {{haproxy.default}}
 
 #---------------------------------------------------------------------
 # round robin balancing between the various backends
 #---------------------------------------------------------------------
-{% for backend in haproxy.backends %}
-backend {{backend.title}}
-    {%for server in backend.servers %}
-    server {{server.title}} {{server.address}} check
-    {% endfor %}
+#{% for backend in haproxy.backends %}
+#backend {{backend.title}}
+#    {%for server in backend.servers %}
+#    server {{server.title}} {{server.address}} check
+#   {% endfor %}
 
-{% endfor %}
+#{% endfor %}
+
+frontend openshift-api-server
+    bind *:6443
+    default_backend openshift-api-server
+    mode tcp
+    option tcplog
+
+backend openshift-api-server
+    balance source
+    mode tcp
+    server bootstrap 192.168.101.100:6443 check
+    server control-plane-0 192.168.101.101:6443 check
+    server control-plane-1 192.168.101.102:6443 check
+    server control-plane-2 192.168.101.103:6443 check
+
+frontend machine-config-server
+    bind *:22623
+    default_backend machine-config-server
+    mode tcp
+    option tcplog
+
+backend machine-config-server
+    balance source
+    mode tcp
+    server bootstrap 10.0.5.58:22623 check
+    server control-plane-0 192.168.101.101:22623 check
+    server control-plane-1 192.168.101.102:22623 check
+    server control-plane-2 192.168.101.103:22623 check
+
+frontend ingress-http
+    bind *:80
+    default_backend ingress-http
+    mode tcp
+    option tcplog
+
+backend ingress-http
+    balance source
+    mode tcp
+    server compute-0 192.168.101.104:80 check
+    server compute-1 192.168.101.105:80 check
+
+frontend ingress-https
+    bind *:443
+    default_backend ingress-https
+    mode tcp
+    option tcplog
+
+backend ingress-https
+    balance source
+    mode tcp
+    server compute-0 192.168.101.104:443 check
+    server compute-1 192.168.101.104:443 check
