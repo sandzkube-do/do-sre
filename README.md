@@ -17,5 +17,7 @@ DevOps Team: System Reliability Engineering , NetOps & Security Automation/Every
 ### Deploy a VM in AWS
 
 ## Using (Hashicorp) Terraform
+  terraform init
+
 
   ### Setup an Infra
